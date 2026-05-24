@@ -4,8 +4,6 @@
 
 This project was built as a practical, local-first data engineering system to demonstrate real-time ingestion, streaming, transformation, and orchestration skills using Kafka, PostgreSQL, dbt, and Airflow.
 
-The main goal was not to build a toy tutorial project, but to create something that reflects the kind of work expected from data engineers who aim for higher salary bands and more senior responsibilities.
-
 ## Purpose of the Project
 
 The project was designed to answer a simple but important question:
