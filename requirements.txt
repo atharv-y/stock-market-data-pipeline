@@ -1,0 +1,5 @@
+confluent-kafka
+kafka-python
+psycopg2-binary
+faker
+dbt-postgres

@@ -1,0 +1,3 @@
+-- models/staging/raw_stock_data.sql
+select *
+from public.stock_prices

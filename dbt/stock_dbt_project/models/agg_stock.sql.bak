@@ -1,0 +1,5 @@
+-- models/agg_stock.sql
+
+select timestamp::date as stock_date, symbol, sum(price) as overall_stock_price, round(avg(price), 3) as avg_stock_price
+from public.stock_prices
+group by 1, 2

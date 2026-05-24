@@ -1,0 +1,24 @@
+1. Created docker-compose.yml file in project folder which was given by gpt.
+2. Ran docker-compose up command in the same folder where the yml file is stored. It started pulling 3 containers - kafka, zookeeper, postgres
+3. opened new terminal in same folder to see if all 3 services are running - docker-compose ps
+4. verified running services by viewing docker desktop
+5. Kafka Cluster -> Kafka Brokers -> Kafka Topics -> Kafka data stream
+6. What YARN is to Spark/Hadoop is what Zookeeper is to Kafka
+7. "*** Could not read served logs: Invalid URL 'http://:8793/log/dag_id=simple_stock_pipeline/run_id=scheduled__2025-05-31T00:00:00+00:00/task_id=print_hello/attempt=1.log': No host supplied***" was resolved by seeting 'AIRFLOW__LOGGING__BASE_LOG_FOLDER: "/opt/airflow/logs"' in docker-compose.yml and "[logging]\nremote_logging = False" in airflow.cfg.
+8. pgAdmin doesn't open unless both postgres services in different containers turned off
+9. Infrastructure -
+Start:
+	1. Kafka
+	2. Zookeeper
+	3. PostgreSQL
+B. Producer: Run a Python script that generates fake stock events and sends them to Kafka.
+C. Consumer: Run a Python script that reads from Kafka and writes into PostgreSQL.
+D. dbt: Run dbt against PostgreSQL to transform raw rows into analytics tables.
+E. Airflow: Create one DAG that triggers producer, consumer, and dbt in order.
+10. FLOW - Producer -> Kafka -> Consumer -> PostgreSQL -> dbt -> transformed tables
+11. dbt models folder has dbt scripts
+12. raw_stock_data - loads data as it is from public to fact schema and basically it loads into table whose name matches with dbt model name. hence similar for agg_stock
+13. C:\Users\atharv\airflow_env\docker\airflow - is for airflow container
+14. "C:\Users\atharv\docker-compose.yaml" - is for atharv airflow container
+15. dbt macros are like functions used in python and sql but in dbt
+16. somehow new airflow location went here - C:\Users\atharv\airflow_env\docker\airflow\dags 🤣
